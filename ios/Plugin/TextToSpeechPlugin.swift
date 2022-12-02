@@ -11,6 +11,12 @@ public class TextToSpeechPlugin: CAPPlugin {
 
     private let implementation = TextToSpeech()
 
+    @objc public func isAvailable(_ call: CAPPluginCall) {
+        call.resolve([
+            "isAvailable": true
+        ])
+    }
+
     @objc public func speak(_ call: CAPPluginCall) {
         let text = call.getString("text") ?? ""
         let lang = call.getString("lang") ?? "en-US"

@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { TextToSpeechPlugin, TTSOptions } from './definitions';
+import type { IsAvailableResponse, TextToSpeechPlugin, TTSOptions } from './definitions';
 
 export class TextToSpeechWeb extends WebPlugin implements TextToSpeechPlugin {
   private speechSynthesis: SpeechSynthesis | null = null;
@@ -13,6 +13,18 @@ export class TextToSpeechWeb extends WebPlugin implements TextToSpeechPlugin {
       window.addEventListener('beforeunload', () => {
         this.stop();
       });
+    }
+  }
+
+  public async isAvailable(): Promise<IsAvailableResponse> {
+    if (this.speechSynthesis) {
+      return {
+        "isAvailable": true
+      }
+    }
+
+    return {
+      "isAvailable": false
     }
   }
 

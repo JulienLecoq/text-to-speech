@@ -23,6 +23,20 @@ public class TextToSpeechPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void isAvailable(PluginCall call) {
+        boolean isAvailable = implementation.isAvailable();
+        JSObject response = new JSObject();
+
+        if (isAvailable) {
+            response.put("isAvailable", true);
+        } else {
+            response.put("isAvailable", false);
+        }
+
+        call.resolve(response);
+    }
+
+    @PluginMethod
     public void speak(PluginCall call) {
         boolean isAvailable = implementation.isAvailable();
         if (!isAvailable) {
