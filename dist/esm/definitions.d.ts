@@ -1,5 +1,9 @@
 export interface TextToSpeechPlugin {
     /**
+     * Check if the text to speech functionality is available on the device.
+     */
+    isAvailable(): Promise<IsAvailableResponse>;
+    /**
      * Starts the TTS engine and plays the desired text.
      */
     speak(options: TTSOptions): Promise<void>;
@@ -109,4 +113,7 @@ export interface SpeechSynthesisVoice {
      * Example: `urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US`.
      */
     voiceURI: string;
+}
+export interface IsAvailableResponse {
+    isAvailable: boolean;
 }

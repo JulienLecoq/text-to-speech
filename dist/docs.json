@@ -6,6 +6,18 @@
     "tags": [],
     "methods": [
       {
+        "name": "isAvailable",
+        "signature": "() => Promise<IsAvailableResponse>",
+        "parameters": [],
+        "returns": "Promise<IsAvailableResponse>",
+        "tags": [],
+        "docs": "Check if the text to speech functionality is available on the device.",
+        "complexTypes": [
+          "IsAvailableResponse"
+        ],
+        "slug": "isavailable"
+      },
+      {
         "name": "speak",
         "signature": "(options: TTSOptions) => Promise<void>",
         "parameters": [
@@ -85,6 +97,22 @@
     "properties": []
   },
   "interfaces": [
+    {
+      "name": "IsAvailableResponse",
+      "slug": "isavailableresponse",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "isAvailable",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ]
+    },
     {
       "name": "TTSOptions",
       "slug": "ttsoptions",

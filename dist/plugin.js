@@ -16,6 +16,16 @@ var capacitorTextToSpeech = (function (exports, core) {
                 });
             }
         }
+        async isAvailable() {
+            if (this.speechSynthesis) {
+                return {
+                    "isAvailable": true
+                };
+            }
+            return {
+                "isAvailable": false
+            };
+        }
         async speak(options) {
             if (!this.speechSynthesis) {
                 this.throwUnsupportedError();

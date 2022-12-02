@@ -89,6 +89,7 @@ const isLanguageSupported = async (lang: string) => {
 
 <docgen-index>
 
+* [`isAvailable()`](#isavailable)
 * [`speak(...)`](#speak)
 * [`stop()`](#stop)
 * [`getSupportedLanguages()`](#getsupportedlanguages)
@@ -101,6 +102,19 @@ const isLanguageSupported = async (lang: string) => {
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### isAvailable()
+
+```typescript
+isAvailable() => Promise<IsAvailableResponse>
+```
+
+Check if the text to speech functionality is available on the device.
+
+**Returns:** <code>Promise&lt;<a href="#isavailableresponse">IsAvailableResponse</a>&gt;</code>
+
+--------------------
+
 
 ### speak(...)
 
@@ -185,6 +199,13 @@ Only available for Android.
 
 
 ### Interfaces
+
+
+#### IsAvailableResponse
+
+| Prop              | Type                 |
+| ----------------- | -------------------- |
+| **`isAvailable`** | <code>boolean</code> |
 
 
 #### TTSOptions
